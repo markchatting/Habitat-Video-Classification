@@ -20,8 +20,8 @@ den_cat = ['dense', 'sparse']
 
 cols = ['habitat', 'density', 'depth', 'temp', 'lat', 'lon', 'lat_lon_str', 'frame']
 
-model = tf.keras.models.load_model('habitat_base_model')
-den_mod = tf.keras.models.load_model('density_base_model')
+model = tf.keras.models.load_model('habitat_base_model')  # MODEL CONSTRUCTED IN HABITAT MODEL CODE FILE
+den_mod = tf.keras.models.load_model('density_base_model')  # MODEL CONSTRUCTED IN DENSITY MODEL CODE FILE
 
 IMG_SIZE = 150
 
@@ -33,6 +33,12 @@ depth_regex = '[0-9]\.+[0-9]'
 root = Tk()
 root.title('Automated Habitat Video Classification')
 
+
+# Functions open and open2 basically, load the file selected by the user read through the video files every 30 frames (this can be adjusted by changing 'COUNT +='. Every 30
+# frames was selected as the videos used were 30 frames per second so one frame every second is classified. Each frame is read, preprocessed, and then classified into one of the 
+# CATEGORIES classes. If coral reefs, seagrass or macro algae are classified then the second model 'den_mod' is used on the same image to classify if the habitat is dense or 
+# spare coral, seagrass or algae. The videos files also displayed lon and lat, water temperature, and depth, these were also read fromt videos. the outputs were saved to CSV files
+# for the client where each row was habitat, density, lat, lon, water temperature and depth.
 
 def open():
     global my_image
@@ -94,7 +100,9 @@ def open():
                     'Habitats_' + str(root.filename[-9:-5]) + '.csv').pack(pady=10)
 
 
-
+    
+# def2 was created just so the client can process two videos at once. def2 function is the same as def.
+    
 
 def open2():
     global my_image
@@ -156,7 +164,7 @@ def open2():
                     'Habitats_' + str(root.filename2[-9:-5]) + '.csv').pack(pady=10)
 
 
-
+# The below section is just the GUI interface handed over to the client. This was done using simple tkinter code.
 
 
 title_lab = Label(root, bg='white',
