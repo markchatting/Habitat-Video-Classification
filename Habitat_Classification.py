@@ -166,7 +166,7 @@ title_lab = Label(root, bg='white',
 title_lab.pack()
 
 
-logo = ImageTk.PhotoImage(Image.open('exxon_logo.jpg'))
+logo = ImageTk.PhotoImage(Image.open('logo.jpg')) # Client logo jpeg file just for the GUI
 panel = Label(root, image=logo).pack()
 
 my_btn = Button(root, text='    Choose First Video    ', command=threading.Thread(target=open).start)
