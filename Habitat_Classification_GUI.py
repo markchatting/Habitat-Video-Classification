@@ -38,8 +38,8 @@ root.title('Automated Habitat Video Classification')
 # Functions open and open2 basically, load the file selected by the user read through the video files every 30 frames (this can be adjusted by changing 'COUNT +='. Every 30
 # frames was selected as the videos used were 30 frames per second so one frame every second is classified. Each frame is read, preprocessed, and then classified into one of the 
 # CATEGORIES classes. If coral reefs, seagrass or macro algae are classified then the second model 'den_mod' is used on the same image to classify if the habitat is dense or 
-# spare coral, seagrass or algae. The videos files also displayed lon and lat, water temperature, and depth, these were also read fromt videos. the outputs were saved to CSV files
-# for the client where each row was habitat, density, lat, lon, water temperature and depth.
+# spare coral, seagrass or algae. The videos files also displayed lon and lat, water temperature, and depth, these were also read fromt videos. The outputs will be saved to CSV files
+# where each row was habitat, density, lat, lon, water temperature and depth.
 
 def open():
     global my_image
