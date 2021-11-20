@@ -25,6 +25,7 @@ den_mod = tf.keras.models.load_model('density_base_model')  # MODEL CONSTRUCTED 
 
 IMG_SIZE = 150
 
+# Regex's to pull out longitude, latitude, water temperature and depth from the onscreen string
 lat_regex = '2+[0-9]\.+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]'
 lon_regex = '5+[0-9]\.+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]'
 temp_regex = '[0-9]+[0-9]\.+[0-9]+[0-9]'
@@ -102,7 +103,6 @@ def open():
 
     
 # def2 was created just so the client can process two videos at once. def2 function is the same as def.
-    
 
 def open2():
     global my_image
